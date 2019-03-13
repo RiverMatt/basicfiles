@@ -63,5 +63,6 @@ endif
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
 
+set number
 colo desert
 "colo delek
