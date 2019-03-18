@@ -14,6 +14,7 @@ alias bd=popd
 alias rm='rm -f'
 alias testbed='cd ~/cs253/testbed/'
 alias p4='cd ~/cs253/p4/cs253p4/'
+alias pdf=okular
 
 export PATH="$HOME/bin:$PATH:."
 export PS1="\e[1;36m[\u@\h \W]\$ \e[m"
