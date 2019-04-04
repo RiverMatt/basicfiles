@@ -13,7 +13,8 @@ alias pd=pushd
 alias bd=popd
 alias rm='rm -f'
 alias testbed='cd ~/cs253/testbed/'
-alias p4='cd ~/cs253/p4/cs253p4/'
+alias p5='cd ~/cs253/p5/'
+alias eclipse=~/eclipse/java-2018-12/eclipse/eclipse
 alias pdf=okular
 
 export PATH="$HOME/bin:$PATH:."

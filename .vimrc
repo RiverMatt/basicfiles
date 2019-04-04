@@ -66,3 +66,8 @@ let &guicursor = &guicursor . ",a:blinkon0"
 set number
 colo desert
 "colo delek
+
+nmap <Enter> i<Enter><Esc>
+"nmap <A-Enter> a<Enter><Esc>
+nmap <Space> i<Space><Esc>l
+nmap <Tab> i<Tab><Esc>l
