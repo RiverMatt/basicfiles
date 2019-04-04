@@ -67,7 +67,7 @@ set number
 colo desert
 "colo delek
 
-nmap <Enter> i<Enter><Esc>
+nnoremap <CR><CR> i<CR><Esc>
 "nmap <A-Enter> a<Enter><Esc>
-nmap <Space> i<Space><Esc>l
-nmap <Tab> i<Tab><Esc>l
+nnoremap <Space> i<Space><Esc>l
+nnoremap <Tab> i<Tab><Esc>l
