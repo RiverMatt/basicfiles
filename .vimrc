@@ -72,3 +72,4 @@ nnoremap <CR> i<CR><Esc>
 "nmap <A-Enter> a<Enter><Esc>
 nnoremap <Space> i<Space><Esc>l
 nnoremap <Tab> i<Tab><Esc>l
+nnoremap <BS> hx<Esc>
