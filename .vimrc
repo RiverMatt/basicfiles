@@ -63,13 +63,12 @@ endif
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
 
+set clipboard=unnamedplus " This requires having vim-X11 installed, and .bashrc alias vim='vimx'
 set number
 colo desert
 "colo delek
 
-"nnoremap <CR><CR> i<CR><Esc>
 nnoremap <CR> i<CR><Esc>
-"nmap <A-Enter> a<Enter><Esc>
 nnoremap <Space> i<Space><Esc>l
 nnoremap <Tab> i<Tab><Esc>l
 nnoremap <BS> hx<Esc>
