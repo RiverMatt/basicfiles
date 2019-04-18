@@ -63,31 +63,11 @@ endif
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
 
-" Tweaks
-set clipboard=unnamedplus " This requires having vim-X11 installed, and .bashrc alias vim='vimx'
 set number
 colo desert
 "colo delek
 
-" Custom keybinds
 nnoremap <CR> i<CR><Esc>
 nnoremap <Space> i<Space><Esc>l
 nnoremap <Tab> i<Tab><Esc>l
 nnoremap <BS> hx<Esc>
-nnoremap ,/ @="0i//\<lt>Esc>j0"<CR>
-nnoremap ,* mm^i/*<Space><Esc>$a<Space>*/<Esc>`mlll
-nnoremap ,# @="0i#\<lt>Esc>j0"<CR>
-nnoremap ," @="0i\"\<lt>Esc>j0"<CR>
-
-" Plugins and addons
-execute pathogen#infect()
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
