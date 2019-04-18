@@ -81,6 +81,7 @@ nnoremap ," @="0i\"\<lt>Esc>j0"<CR>
 inoremap { {<CR><Tab><Esc>mmi<CR>}<Esc>`ma<Tab>
 inoremap ( ()<Esc>i
 inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
 
 " Plugins and addons
 execute pathogen#infect()
