@@ -83,6 +83,10 @@ inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
+map <C-J> <C-W>j" <C-W>_
+map <C-K> <C-W>k" <C-W>_
+map <C-h> <C-W>h" <C-W>_
+map <C-l> <C-W>l" <C-W>_
 
 " Plugins and addons
 execute pathogen#infect()
