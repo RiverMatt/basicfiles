@@ -11,10 +11,11 @@ fi
 # User specific aliases and functions
 alias pd=pushd
 alias bd=popd
-alias rm='rm -f'
+#alias rm='rm -f'
 alias testbed='cd ~/cs253/testbed/'
 alias p5='cd ~/cs321/p5/'
 alias p6='cd ~/cs253/p6/'
+alias p7='cd ~/cs253/p7/'
 alias eclipse=~/eclipse/java-2018-12/eclipse/eclipse
 alias pdf=okular
 alias shared='cd ~/shared/'

@@ -78,15 +78,18 @@ nnoremap ,/ @="0i//\<lt>Esc>j0"<CR>
 nnoremap ,* mm^i/*<Space><Esc>$a<Space>*/<Esc>`mlll
 nnoremap ,# @="0i#\<lt>Esc>j0"<CR>
 nnoremap ," @="0i\"\<lt>Esc>j0"<CR>
-inoremap { {<CR><Tab><Esc>mmi<CR>}<Esc>`ma<Tab>
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
-map <C-J> <C-W>j" <C-W>_
-map <C-K> <C-W>k" <C-W>_
-map <C-h> <C-W>h" <C-W>_
-map <C-l> <C-W>l" <C-W>_
+nnoremap ,- @="0i//-----------------------------------------------------------------------------\<lt>Esc>j0"<CR>
+nnoremap ; a;<Esc>l
+inoremap {{ {<CR><Tab><Esc>mmi<CR>}<Esc>`ma<Tab>
+inoremap (( ()<Esc>i
+inoremap [[ []<Esc>i
+inoremap '' ''<Esc>i
+inoremap "" ""<Esc>i
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map _ <C-W>_
 
 " Plugins and addons
 execute pathogen#infect()
