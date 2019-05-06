@@ -1,8 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/loren/projects/classNotes/palindrome'
-let g:netrw_dirhist_2='/home/loren/.ssh'
-let g:netrw_dirhist_3='/home/loren/cs253/testbed/.git'
-let g:netrw_dirhist_4='/home/loren/.vim'
-let g:netrw_dirhist_5='/opt/eclipse/eclipse-installer/readme'
-let g:netrw_dirhist_6='/home/loren/cs253/inclass/execvp-example'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/loren/cs321/p5'
+let g:netrw_dirhist_2='/home/loren/cs321/p5/src'
+let g:netrw_dirhist_3='/home/loren/cs253/p7'
