@@ -62,6 +62,7 @@ endif
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
+set list lcs=tab:\¦\ 
 
 " Tweaks
 set clipboard=unnamedplus " This requires having vim-X11 installed, and .bashrc alias vim='vimx'
@@ -74,16 +75,19 @@ nnoremap <CR> i<CR><Esc>
 nnoremap <Space> i<Space><Esc>l
 nnoremap <Tab> i<Tab><Esc>l
 nnoremap <BS> hx<Esc>
-nnoremap ,/ @="0i//\<lt>Esc>j0"<CR>
-nnoremap ,* mm^i/*<Space><Esc>$a<Space>*/<Esc>`mlll
-nnoremap ,# @="0i#\<lt>Esc>j0"<CR>
-nnoremap ," @="0i\"\<lt>Esc>j0"<CR>
-nnoremap ,- @="0i//-----------------------------------------------------------------------------\<lt>Esc>j0"<CR>
-nnoremap ,. @="0i//.............................................................................\<lt>Esc>j0"<CR>
+nnoremap ,/ @="mc0i//\<lt>Esc>`cj"<CR>
+nnoremap ,,/ mc0xx`cj
+nnoremap ,* mc^i/*<Space><Esc>$a<Space>*/<Esc>`clll
+nnoremap ,# @="mc0i#\<lt>Esc>`cj"<CR>
+nnoremap ,,# mc0x`cj
+nnoremap ," @="mc0i\"\<lt>Esc>`cj"<CR>
+nnoremap ,," mc0x`cj
+nnoremap ,- @="mc0i//-----------------------------------------------------------------------------\<lt>Esc>`cj"<CR>
+nnoremap ,. @="mc0i//.............................................................................\<lt>Esc>`cj"<CR>
 nnoremap ; a;<Esc>l
-inoremap {{ {<CR><Tab><Esc>mmi<CR>}<Esc>`ma<Tab>
-inoremap (( ()<Esc>i
-inoremap [[ []<Esc>i
+inoremap {{ {<CR><Tab><Esc>mci<CR>}<Esc>`ca<Tab>
+" inoremap (( ()<Esc>i
+" inoremap [[ []<Esc>i
 inoremap '' ''<Esc>i
 inoremap "" ""<Esc>i
 map <C-J> <C-W>j
