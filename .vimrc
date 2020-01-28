@@ -53,11 +53,11 @@ endif
 
 filetype plugin on
 
-if &term=="xterm"
+"if &term=="xterm"
      set t_Co=8
      set t_Sb=[4%dm
      set t_Sf=[3%dm
-endif
+"endif
 
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
@@ -65,7 +65,6 @@ let &guicursor = &guicursor . ",a:blinkon0"
 set list lcs=tab:\¦\ 
 
 " Tweaks
-set clipboard=unnamedplus " This requires having vim-X11 installed, and .bashrc alias vim='vimx'
 set number
 colo desert
 "colo delek
@@ -78,6 +77,7 @@ nnoremap <BS> hx<Esc>
 nnoremap ,/ @="mc0i//\<lt>Esc>`cj"<CR>
 nnoremap ,,/ mc0xx`cj
 nnoremap ,* mc^i/*<Space><Esc>$a<Space>*/<Esc>`clll
+nnoremap ,,* mc^xxx$xxx`chhh
 nnoremap ,# @="mc0i#\<lt>Esc>`cj"<CR>
 nnoremap ,,# mc0x`cj
 nnoremap ," @="mc0i\"\<lt>Esc>`cj"<CR>
@@ -86,10 +86,6 @@ nnoremap ,- @="mc0i//-----------------------------------------------------------
 nnoremap ,. @="mc0i//.............................................................................\<lt>Esc>`cj"<CR>
 nnoremap ; a;<Esc>l
 inoremap {{ {<CR><Tab><Esc>mci<CR>}<Esc>`ca<Tab>
-" inoremap (( ()<Esc>i
-" inoremap [[ []<Esc>i
-inoremap '' ''<Esc>i
-inoremap "" ""<Esc>i
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-h> <C-W>h
