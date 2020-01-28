@@ -78,6 +78,8 @@ nnoremap ,/ @="mc0i//\<lt>Esc>`cj"<CR>
 nnoremap ,,/ mc0xx`cj
 nnoremap ,* mc^i/*<Space><Esc>$a<Space>*/<Esc>`clll
 nnoremap ,,* mc^xxx$xxx`chhh
+nnoremap ,< mc^i<!--<Space><Esc>$a<Space>--><Esc>`clllll
+nnoremap ,,< mc^xxxxx$xxxx`chhhhh
 nnoremap ,# @="mc0i#\<lt>Esc>`cj"<CR>
 nnoremap ,,# mc0x`cj
 nnoremap ," @="mc0i\"\<lt>Esc>`cj"<CR>
