@@ -99,6 +99,9 @@ map _ <C-W>_
 
 set shiftwidth=2
 
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
+
 " For Python
 "set softtabstop=4
 "set tabstop=4
