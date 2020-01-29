@@ -97,6 +97,13 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 map _ <C-W>_
 
+set shiftwidth=2
+
+" For Python
+"set softtabstop=4
+"set tabstop=4
+"set expandtab
+
 " Plugins and addons
 execute pathogen#infect()
 
