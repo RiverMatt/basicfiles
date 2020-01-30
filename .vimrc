@@ -99,8 +99,12 @@ map _ <C-W>_
 
 set shiftwidth=2
 
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
+set foldmethod=marker
+"autocmd BufRead,BufNewFile *.html set foldmarker=<!--{{{-->,<--}}}-->
+	autocmd filetype html set foldmarker=<!--{{{-->,<--}}}-->
+
+"set foldmethod=indent
+"	au BufRead * normal zR
 
 " For Python
 "set softtabstop=4
