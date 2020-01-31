@@ -100,11 +100,11 @@ map _ <C-W>_
 set shiftwidth=2
 
 set foldmethod=marker
-"autocmd BufRead,BufNewFile *.html set foldmarker=<!--{{{-->,<--}}}-->
-	autocmd filetype html set foldmarker=<!--{{{-->,<--}}}-->
+	autocmd filetype html set foldmarker=<!--{{{-->,<!--}}}-->
+"	autocmd BufRead,BufNewFile *.html set foldmarker=<!--{{{-->,<!--}}}-->
 
 "set foldmethod=indent
-"	au BufRead * normal zR
+"	au BufRead * normal zM
 
 " For Python
 "set softtabstop=4
