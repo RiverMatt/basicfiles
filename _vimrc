@@ -8,9 +8,10 @@ endif
 set winaltkeys=no
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
-set guioptions-=m "remove menu bar
+"set guioptions-=m "remove menu bar
 set go-=L " Removes left hand scroll bar
 set guioptions-=M
+set guifont=Consolas:h12
 
 
 
@@ -101,13 +102,14 @@ nnoremap ,. @="mc0i//...........................................................
 nnoremap ; a;<Esc>l
 inoremap {{ {<CR><Tab><Esc>mci<CR>}<Esc>`ca<Tab>
 
+" Navigating splits
 map <S-J> :tabp<CR>
 map <S-K> :tabn<CR>
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-map _ <C-W>
+"map _ <C-W>
 
 inoremap <A-h> <Esc>h
 inoremap <A-j> <Esc>j
