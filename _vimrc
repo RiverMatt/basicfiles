@@ -103,8 +103,8 @@ nnoremap ; a;<Esc>l
 inoremap {{ {<CR><Tab><Esc>mci<CR>}<Esc>`ca<Tab>
 
 " Navigating splits
-map <S-J> :tabp<CR>
-map <S-K> :tabn<CR>
+"map <S-J> :tabp<CR>
+"map <S-K> :tabn<CR>
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-h> <C-W>h
