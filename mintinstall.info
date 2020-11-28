@@ -9,4 +9,9 @@ mouse
 change workspace hotkeys
 set -o vi
 
-set grub default to last used
+set grub default to last used:
+sudo vim /etc/default/grub
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+
+sudo update-grub
