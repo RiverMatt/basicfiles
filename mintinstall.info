@@ -1,8 +1,8 @@
+swap: 4096 MB
 Root: 15000 MB
 Home: 30904 MB
-swap: 4096 MB
 
-vim git encfs inkscape xbindkeys xdotool
+sudo apt update && sudo apt upgrade -y && sudo apt install vim git encfs inkscape xbindkeys xdotool -y
 
 theme
 mouse
