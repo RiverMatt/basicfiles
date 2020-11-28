@@ -1,0 +1,12 @@
+Root: 15000 MB
+Home: 30904 MB
+swap: 4096 MB
+
+vim git encfs inkscape xbindkeys xdotool
+
+theme
+mouse
+change workspace hotkeys
+set -o vi
+
+set grub default to last used
