@@ -132,7 +132,7 @@ alias fg4='fg %4'
 alias fg5='fg %5'
 alias fg6='fg %6'
 alias fg7='fg %7'
-
+alias scan='sudo arp-scan --localnet'
 
 
 export PATH="$HOME/bin:$PATH:."
