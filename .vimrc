@@ -89,6 +89,9 @@ nnoremap ,. @="mc0i//...........................................................
 nnoremap ; a;<Esc>l
 inoremap {{ {<CR><Tab><Esc>mci<CR>}<Esc>`ca<Tab>
 
+set ignorecase
+set smartcase
+
 " Navigating splits
 "map <S-J> :tabp<CR>
 "map <S-K> :tabn<CR>
