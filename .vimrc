@@ -146,22 +146,22 @@ if has("gui_running")
     set guioptions -=T
 
     " macro to toggle window menu keys
-    noremap ,wm :call ToggleWindowMenu()<CR>
+"    noremap ,wm :call ToggleWindowMenu()<CR>
 
     " function to toggle window menu keys
-    function ToggleWindowMenu()
-        if (&winaltkeys == 'yes')
-            set winaltkeys=no   "turn off menu keys
-            set guioptions -=m  "turn off menubar
+"    function ToggleWindowMenu()
+"        if (&winaltkeys == 'yes')
+"            set winaltkeys=no   "turn off menu keys
+"            set guioptions -=m  "turn off menubar
 
             " uncomment to remove icon menubar
             "set guioptions -=T
-        else
-            set winaltkeys=yes  "turn on menu keys
-            set guioptions +=m  "turn on menubar
+"        else
+"            set winaltkeys=yes  "turn on menu keys
+"            set guioptions +=m  "turn on menubar
 
             " uncomment to add icon menubar
             "set guioptions +=T
-        endif
-    endfunction
+"        endif
+"    endfunction
 endif
