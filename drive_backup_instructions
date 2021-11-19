@@ -13,3 +13,5 @@ sudo dd bs=4M status=progress if=/dev/sdx | gzip > /home/username/image`date +%m
 Restore from the compressed image:
 
 sudo gzip -dc /home/username/imagex.gz | dd bs=4M status=progress of=/dev/sdx
+
+Note: sudo may need to go on the dd side of the pipe
