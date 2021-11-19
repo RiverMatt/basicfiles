@@ -1,0 +1,15 @@
+Determine which device to back up:
+
+sudo fdisk -l
+
+
+
+Create the compressed image:
+
+sudo dd bs=4M status=progress if=/dev/sdx | gzip > /home/username/image`date +%m%d%y`.gz
+
+
+
+Restore from the compressed image:
+
+sudo gzip -dc /home/username/imagex.gz | dd bs=4M status=progress of=/dev/sdx
