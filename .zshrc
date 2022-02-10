@@ -70,9 +70,10 @@ ZSH_THEME="bard"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -80,6 +81,8 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+
+export EDITOR=/usr/bin/vim
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -106,13 +109,16 @@ bindkey '^R' history-incremental-search-backward
 alias tshift="sudo timeshift-autosnap && sudo update-grub"
 alias scan="sudo arp-scan --localnet"
 alias zip="zip -r"
+alias klogout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
 
-alias pvpnc="protonvpn-cli c -f"
-alias pvpnd="protonvpn-cli d"
+
+alias vc="protonvpn-cli c -f"
+alias vd="protonvpn-cli d"
 
 # Rust replacements: exa, bat, ripgrep (rg), fd (find), procs, broot (tree+)
 alias ls="exa --long"
 alias ls.="exa --all --long"
+alias tree="exa --tree"
 
 VISUAL="vim"
 EDITOR="$VISUAL"
