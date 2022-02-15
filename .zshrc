@@ -14,8 +14,7 @@ compinit
 
 #RPROMPT='%(?.%F{blue}.%F{#FFFF00})%T%f'
 RPROMPT='%F{#FFFF00}%T%f'
-PROMPT='%B%(?.%F{green}.%F{red})>%f %F{cyan}%n: %~%f%b %F{green}$%f '
-
+PROMPT='%B%(?.%F{green}.%F{red})>%f %F{cyan}%n: %~%f%b %F{green}%(!.#.$)%f '
 
 bindkey '^R' history-incremental-search-backward
 
