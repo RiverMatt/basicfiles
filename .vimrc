@@ -62,7 +62,7 @@ filetype plugin on
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
-set list lcs=tab:\ \ 
+set list lcs=tab:\>\ 
 
 " Tweaks
 set number
