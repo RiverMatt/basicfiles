@@ -9,7 +9,6 @@ set viminfo='20,\"50	" read/write a .viminfo file, don't store more
 			" than 50 lines of registers
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
-set showcmd
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
@@ -62,12 +61,15 @@ filetype plugin on
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
-set list lcs=tab:\>\ 
+
 
 " Tweaks
 set number
 colo desert
 "colo delek
+" Show tab characters or not. :set list! will toggle tab characters on and off
+set nolist
+"set list lcs=tab:\>\ 
 
 " Custom keybinds
 nnoremap <CR> i<CR><Esc>
@@ -145,23 +147,4 @@ if has("gui_running")
     " uncomment to disable icon menubar
     set guioptions -=T
 
-    " macro to toggle window menu keys
-"    noremap ,wm :call ToggleWindowMenu()<CR>
-
-    " function to toggle window menu keys
-"    function ToggleWindowMenu()
-"        if (&winaltkeys == 'yes')
-"            set winaltkeys=no   "turn off menu keys
-"            set guioptions -=m  "turn off menubar
-
-            " uncomment to remove icon menubar
-            "set guioptions -=T
-"        else
-"            set winaltkeys=yes  "turn on menu keys
-"            set guioptions +=m  "turn on menubar
-
-            " uncomment to add icon menubar
-            "set guioptions +=T
-"        endif
-"    endfunction
 endif
