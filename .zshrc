@@ -22,7 +22,7 @@ alias tshift="sudo timeshift-autosnap && sudo update-grub"
 alias scan="sudo arp-scan --localnet"
 alias zip="zip -r"
 alias klogout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
-
+alias tmp="cd $(mktemp -d)"
 
 alias vc="protonvpn-cli c -f"
 alias vd="protonvpn-cli d"
