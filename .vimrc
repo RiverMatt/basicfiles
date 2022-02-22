@@ -69,6 +69,7 @@ colo desert
 "colo delek
 " Show tab characters or not. :set list! will toggle tab characters on and off
 set nolist
+set showcmd
 "set list lcs=tab:\>\ 
 
 " Custom keybinds

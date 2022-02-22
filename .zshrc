@@ -12,6 +12,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+PATH="$PATH:/$HOME/.local/bin"
+
 #RPROMPT='%(?.%F{blue}.%F{#FFFF00})%T%f'
 RPROMPT='%F{#FFFF00}%T%f'
 PROMPT='%B%(?.%F{green}.%F{red})>%f %F{cyan}%n: %~%f%b %F{green}%(!.#.$)%f '
