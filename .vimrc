@@ -79,7 +79,7 @@ nnoremap <Tab> i<Tab><Esc>l
 nnoremap <BS> hx<Esc>
 nnoremap ,/ @="mc0i//\<lt>Esc>`cj"<CR>
 nnoremap ,,/ mc0xx`cj
-nnoremap ,* mc^i/*<Space><Esc>$a<Space>*/<Esc>`clll
+"nnoremap ,* mc^i/*<Space><Esc>$a<Space>*/<Esc>`clll
 nnoremap ,,* mc^xxx$xxx`chhh
 nnoremap ,< mc^i<!--<Space><Esc>$a<Space>--><Esc>`clllll
 nnoremap ,,< mc^xxxxx$xxxx`chhhhh
@@ -91,6 +91,8 @@ nnoremap ,- @="mc0i//-----------------------------------------------------------
 nnoremap ,. @="mc0i//.............................................................................\<lt>Esc>`cj"<CR>
 nnoremap ; a;<Esc>l
 inoremap {{ {<CR><Tab><Esc>mci<CR>}<Esc>`ca<Tab>
+
+nnoremap ,* mcO/*------------------------------------------------------------------------*/<Esc>jI/*<Space><Esc>A<Space>*/<CR>/*------------------------------------------------------------------------*/<Esc>`clll
 
 set ignorecase
 set smartcase
