@@ -118,9 +118,9 @@ set foldmethod=marker
 
 " For Python
 "set softtabstop=4
-set tabstop=4
 "set expandtab
 set shiftwidth=4	" indent a line in normal mode using >> or <<, and in insert mode using ctrl+t or ctrl+d
+set tabstop=4		" we want the tab stop to be the same as shiftwidth
 
 
 " Plugins and addons
