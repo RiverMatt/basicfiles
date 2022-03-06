@@ -118,8 +118,10 @@ set foldmethod=marker
 
 " For Python
 "set softtabstop=4
-"set tabstop=4
+set tabstop=4
 "set expandtab
+set shiftwidth=4	" indent a line in normal mode using >> or <<, and in insert mode using ctrl+t or ctrl+d
+
 
 " Plugins and addons
 
