@@ -71,6 +71,7 @@ colo desert
 set nolist
 set showcmd
 "set list lcs=tab:\>\ 
+highlight Visual cterm=reverse ctermbg=NONE
 
 " Custom keybinds
 nnoremap <CR> i<CR><Esc>
