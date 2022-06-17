@@ -65,20 +65,21 @@ let &guicursor = &guicursor . ",a:blinkon0"
 
 " Tweaks
 set number
-colo desert
-"colo delek
-" Show tab characters or not. :set list! will toggle tab characters on and off
-set nolist
+colo desert " or delek
+set ignorecase
+set smartcase
+set nolist " Show tab characters or not. :set list! will toggle tab characters on and off
+"set list lcs=tab:\>\ " character to use to show tabs
 set showcmd
-"set list lcs=tab:\>\ 
-highlight Visual cterm=reverse ctermbg=NONE
+highlight Visual cterm=reverse ctermbg=NONE " proper inverse highlighting
 
 " Custom keybinds
 nnoremap <CR> i<CR><Esc>
 "nnoremap <Space> i<Space><Esc>l
-nnoremap <Space> za					" use spacebar to fold/unfold
+nnoremap <Space> za	" use spacebar to fold/unfold
 nnoremap <Tab> i<Tab><Esc>l
 nnoremap <BS> hx<Esc>
+nnoremap Q <nop>	" remove the ex-mode hotkey
 nnoremap ,/ @="mc0i//\<lt>Esc>`cj"<CR>
 nnoremap ,< mc^i<!--<Space><Esc>$a<Space>--><Esc>`clllll
 nnoremap ,# @="mc0i#\<lt>Esc>`cj"<CR>
@@ -93,8 +94,6 @@ nnoremap ,,j mcO/*--------------------------------------------------------------
 nnoremap ,s mc^i###<Space><Esc>$a<Space>###<Esc>`clll
 nnoremap ,,s mcO########################################################################<Esc>jI###<Space><Esc>A<Space>###<CR>########################################################################<Esc>`clll
 
-set ignorecase
-set smartcase
 
 " Navigating splits
 set splitbelow
@@ -113,7 +112,7 @@ set foldmethod=marker
 "	autocmd BufRead,BufNewFile *.html set foldmarker=<!--{{{-->,<!--}}}-->
 
 " Highlight bad whitespace (not sure if this is working
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhiteSpace /\s\+$/
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhiteSpace /\s\+$/
 
 
 " ---- For Python ----
@@ -125,7 +124,7 @@ au BufNewFile,BufRead *.py
 	\ | set expandtab
 	\ | set fileformat=unix
 	\ | set foldmethod=indent
-	"\ | set foldlevel=99
+	\ | set foldlevel=99
 "au BufNewFile,BufRead *.py
 "	\ set tabstop=4
 "	\ softtabstop=4
