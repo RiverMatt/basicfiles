@@ -101,20 +101,20 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=2,
-    insert_position=1),
+    #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=2,
+    layout.Columns(border_focus="#aaaa00", border_width=2, margin=2, insert_position=1),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    #layout.Stack(num_stacks=2),
+    #layout.Bsp(),
+    #layout.Matrix(),
+    #layout.MonadTall(),
+    #layout.MonadWide(),
+    #layout.RatioTile(),
+    #layout.Tile(),
+    #layout.TreeTab(),
+    #layout.VerticalTile(),
+    #layout.Zoomy(),
 ]
 
 widget_defaults = dict(
@@ -130,7 +130,7 @@ screens = [
         wallpaper_mode="fill",
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
+                widget.CurrentLayoutIcon(),
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -144,9 +144,9 @@ screens = [
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
                 widget.Sep(),
-                widget.Clock(format="%H:%M.%S %a %D"),
+                widget.Clock(format="%H:%M.%S %a %D", foreground="#bbbb00"),
                 widget.Sep(),
-                widget.QuickExit(),
+                widget.QuickExit(foreground="#aa11aa"),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
