@@ -76,8 +76,6 @@ highlight Visual cterm=reverse ctermbg=NONE " proper inverse highlighting
 
 " Custom keybinds
 nnoremap <CR> i<CR><Esc>
-"nnoremap <Space> i<Space><Esc>l
-nnoremap <Space> za	" use spacebar to fold/unfold
 nnoremap <Tab> i<Tab><Esc>l
 nnoremap <BS> hx<Esc>
 nnoremap Q <nop>	" remove the ex-mode hotkey
@@ -108,8 +106,12 @@ map <C-l> <C-W>l
 
 set shiftwidth=2
 
-set foldmethod=marker
-autocmd filetype html set foldmarker=<!--{{{-->,<!--}}}-->
+
+" Folds
+set foldmethod=indent
+set foldlevel=99
+nnoremap <Space> za
+
 
 " ---- For Python ----
 au BufNewFile,BufRead *.py
