@@ -108,19 +108,15 @@ map <C-l> <C-W>l
 
 set shiftwidth=2
 
-set foldmethod=marker
-	autocmd filetype html set foldmarker=<!--{{{-->,<!--}}}-->
-"	autocmd BufRead,BufNewFile *.html set foldmarker=<!--{{{-->,<!--}}}-->
-
-" Highlight bad whitespace (not sure if this is working
-"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhiteSpace /\s\+$/
-
+set foldmethod=indent
+"set foldmethod=marker
+"autocmd filetype html set foldmarker=<!--{{{-->,<!--}}}-->
 
 " ---- For Python ----
 au BufNewFile,BufRead *.py
 	\ setlocal tabstop=4
 	\ | setlocal softtabstop=4
-	\ | setlocal shiftwidth=4
+	\ | setlocal shiftwidth=4	" indent a line in normal mode using >> or <<, and in insert mode using ctrl+t or ctrl+d
 	\ | setlocal textwidth=79
 	\ | setlocal expandtab
 	\ | setlocal fileformat=unix
@@ -128,12 +124,6 @@ au BufNewFile,BufRead *.py
 	\ | setlocal foldlevel=99
 	\ | setlocal list
 	\ | setlocal lcs=lead:·
-
-
-"set softtabstop=4
-"set expandtab
-"set shiftwidth=4	" indent a line in normal mode using >> or <<, and in insert mode using ctrl+t or ctrl+d
-"set tabstop=4		" we want the tab stop to be the same as shiftwidth
 
 " ---- end Python ----
 
