@@ -108,15 +108,14 @@ map <C-l> <C-W>l
 
 set shiftwidth=2
 
-set foldmethod=indent
-"set foldmethod=marker
-"autocmd filetype html set foldmarker=<!--{{{-->,<!--}}}-->
+set foldmethod=marker
+autocmd filetype html set foldmarker=<!--{{{-->,<!--}}}-->
 
 " ---- For Python ----
 au BufNewFile,BufRead *.py
 	\ setlocal tabstop=4
 	\ | setlocal softtabstop=4
-	\ | setlocal shiftwidth=4	" indent a line in normal mode using >> or <<, and in insert mode using ctrl+t or ctrl+d
+	\ | setlocal shiftwidth=4
 	\ | setlocal textwidth=79
 	\ | setlocal expandtab
 	\ | setlocal fileformat=unix
