@@ -69,6 +69,7 @@ colo desert " or delek
 set ignorecase
 set smartcase
 set nolist " Show tab characters or not. :set list! will toggle tab characters on and off
+set lcs=tab:»_,trail:·
 "set list lcs=tab:\>\ " character to use to show tabs
 set showcmd
 highlight Visual cterm=reverse ctermbg=NONE " proper inverse highlighting
@@ -125,6 +126,7 @@ au BufNewFile,BufRead *.py
 	\ | set fileformat=unix
 	\ | set foldmethod=indent
 	\ | set foldlevel=99
+	\ | set list			" this isn't working
 "au BufNewFile,BufRead *.py
 "	\ set tabstop=4
 "	\ softtabstop=4
