@@ -118,24 +118,17 @@ set foldmethod=marker
 
 " ---- For Python ----
 au BufNewFile,BufRead *.py
-	\ set tabstop=4
-	\ | set softtabstop=4
-	\ | set shiftwidth=4
-	\ | set textwidth=79
-	\ | set expandtab
-	\ | set fileformat=unix
-	\ | set foldmethod=indent
-	\ | set foldlevel=99
-	\ | set list			" this isn't working
-"au BufNewFile,BufRead *.py
-"	\ set tabstop=4
-"	\ softtabstop=4
-"	\ shiftwidth=4
-"	\ textwidth=79
-"	\ expandtab
-"	\ fileformat=unix
-"	\ foldmethod=indent
-"	\ foldlevel=99
+	\ setlocal tabstop=4
+	\ | setlocal softtabstop=4
+	\ | setlocal shiftwidth=4
+	\ | setlocal textwidth=79
+	\ | setlocal expandtab
+	\ | setlocal fileformat=unix
+	\ | setlocal foldmethod=indent
+	\ | setlocal foldlevel=99
+	\ | setlocal list
+	\ | setlocal lcs=lead:·
+
 
 "set softtabstop=4
 "set expandtab
