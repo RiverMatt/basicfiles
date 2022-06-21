@@ -52,11 +52,12 @@ endif
 
 filetype plugin on
 
-"if &term=="xterm"
-     set t_Co=8
-     set t_Sb=[4%dm
-     set t_Sf=[3%dm
-"endif
+" Terminal colors
+"set t_Co=256		" set 8 colors
+"set t_Sb=[4%dm	" set background color
+"set t_Sf=[3%dm	" set foreground oolor
+colo industry 		" or default (earthy tones), elflord (browns, blues, pinks), evening (like default but with yellow), industry 
+
 
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
@@ -65,12 +66,10 @@ let &guicursor = &guicursor . ",a:blinkon0"
 
 " Tweaks
 set number
-colo desert " or delek
 set ignorecase
 set smartcase
 set nolist " Show tab characters or not. :set list! will toggle tab characters on and off
 set lcs=tab:»_,trail:·
-"set list lcs=tab:\>\ " character to use to show tabs
 set showcmd
 highlight Visual cterm=reverse ctermbg=NONE " proper inverse highlighting
 
@@ -128,18 +127,6 @@ au BufNewFile,BufRead *.py
 
 " ---- end Python ----
 
-
-" Plugins and addons
-
-" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
 
 " vim.gtk/gvim: map alt+[hjkl] to normal terminal behaivior
 " source: https://stackoverflow.com/questions/26366055/how-to-make-alt-works-in-gvim-as-in-vim
