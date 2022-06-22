@@ -2,7 +2,7 @@ if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-set bs=indent,eol,start		" allow backspacing over everything in insert mode
+set bs=indent,eol,start	" allow backspacing over everything in insert mode
 set ai			" always set autoindenting on
 "set backup		" keep a backup file
 set viminfo='20,\"50	" read/write a .viminfo file, don't store more
