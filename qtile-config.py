@@ -29,7 +29,20 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-mod = "mod4"
+# For autostart
+import os
+import subprocess
+
+from libqtile import hook
+
+@hook.subscribe.startup
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.run([home])
+
+# End for autostart
+
+mod = "mod4"            # mod1 == alt
 terminal = "alacritty"
 
 keys = [
@@ -72,6 +85,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "d", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
+    Key(["control", "mod1"], "l", lazy.spawn("slock"), desc="Locks the screen"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -108,8 +122,8 @@ layouts = [
     #layout.Stack(num_stacks=2),
     #layout.Bsp(),
     #layout.Matrix(),
-    #layout.MonadTall(),
-    #layout.MonadWide(),
+    layout.MonadTall(border_focus="#aaaa00", border_width=2, margin=2),
+    layout.MonadWide(border_focus="#aaaa00", border_width=2, margin=2),
     #layout.RatioTile(),
     #layout.Tile(),
     #layout.TreeTab(),
@@ -126,7 +140,7 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        wallpaper="~/Pictures/KDE-Plasma-Dark-687-HD.jpg",
+        wallpaper="~/Pictures/KDE-Plasma-Dark-710-HD-WL.jpg",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -143,6 +157,8 @@ screens = [
                 #widget.TextBox("bard config", name="default"),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
+                widget.Sep(),
+                widget.Battery(foreground="bbbb00"),
                 widget.Sep(),
                 widget.Clock(format="%H:%M.%S %a %D", foreground="#bbbb00"),
                 widget.Sep(),
