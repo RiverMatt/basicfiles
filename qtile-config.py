@@ -40,6 +40,7 @@ def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.run([home])
 
+# change backend on picom to glx
 # End for autostart
 
 mod = "mod4"            # mod1 == alt
