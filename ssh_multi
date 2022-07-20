@@ -17,4 +17,4 @@ Host riverstone.github.com		# this is the name you'll use in your .git/config ur
 
 Then edit your .git/config file in each git to look like this:
 [remote "origin"]
-        url = git@rivermatt.github.com:RiverMatt/basicfiles	# note the rivermatt.github.com
+        url = git@rivermatt.github.com:RiverMatt/basicfiles	# note the rivermatt.github.com 
