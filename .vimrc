@@ -123,6 +123,7 @@ au BufNewFile,BufRead *.py
 	\ | setlocal foldlevel=99
 	\ | setlocal list
 	\ | setlocal lcs=lead:·
+	\ | nnoremap <F2> :w<CR>:!python %<CR>
 
 " ---- end Python ----
 
