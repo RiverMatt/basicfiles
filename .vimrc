@@ -123,6 +123,7 @@ au BufNewFile,BufRead *.py
 	\ | setlocal foldlevel=99
 	\ | setlocal list
 	\ | setlocal lcs=lead:·
+	\ | setlocal colorcolumn=79
 	\ | nnoremap <F2> :!python %<CR>
 	"\ | nnoremap <F2> :w<CR>:!python %<CR>
 
