@@ -94,6 +94,8 @@ nnoremap ,,s mcO################################################################
 
 
 " Navigating splits
+nnoremap <F5> :vs .<CR>
+nnoremap <F4> :split .<CR>
 set splitbelow
 set splitright
 "map <S-J> :tabp<CR>
