@@ -25,6 +25,7 @@ alias scan="sudo arp-scan --localnet"
 alias zip="zip -r"
 alias klogout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
 alias tmp="cd $(mktemp -d)"
+alias battery='echo "$(cat /sys/class/power_supply/BAT0/capacity)%"'
 
 alias vc="protonvpn-cli c -f"
 alias vd="protonvpn-cli d"
