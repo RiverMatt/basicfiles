@@ -124,14 +124,14 @@ for i in groups:
 
 layouts = [
     #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=2,
-    layout.Columns(border_focus="#aaaa00", border_width=2, margin=2, insert_position=1),
+    layout.Columns(border_focus="#aaaa00", border_width=2, margin=7, insert_position=1),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     #layout.Stack(num_stacks=2),
     #layout.Bsp(),
     #layout.Matrix(),
-    layout.MonadTall(border_focus="#aaaa00", border_width=2, margin=2),
-    layout.MonadWide(border_focus="#aaaa00", border_width=2, margin=2),
+    layout.MonadTall(border_focus="#aaaa00", border_width=2, margin=3),
+    layout.MonadWide(border_focus="#aaaa00", border_width=2, margin=3),
     #layout.RatioTile(),
     #layout.Tile(),
     #layout.TreeTab(),
@@ -191,7 +191,7 @@ mouse = [
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list
-follow_mouse_focus = False
+follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
