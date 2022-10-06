@@ -27,6 +27,11 @@ alias klogout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
 alias tmp="cd $(mktemp -d)"
 alias battery='echo "$(cat /sys/class/power_supply/BAT0/capacity)%"'
 
+# Duplicate screen to dual monitor in qtile
+alias dm="xrandr --output eDP-1 --mode 1920x1080 && xrandr --output DP-3 --mode 1920x
+1080 --same-as eDP-1"
+alias dmoff="xrandr --output DP-3 --off && xrandr --output eDP-1 --mode 1920x1200"
+
 alias vc="protonvpn-cli c -f"
 alias vd="protonvpn-cli d"
 
