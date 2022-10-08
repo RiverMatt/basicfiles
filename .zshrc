@@ -31,6 +31,9 @@ alias battery='echo "$(cat /sys/class/power_supply/BAT0/capacity)%"'
 alias dm="xrandr --output eDP-1 --mode 1920x1080 && xrandr --output DP-3 --mode 1920x1080 --same-as eDP-1"
 alias dmoff="xrandr --output DP-3 --off && xrandr --output eDP-1 --mode 1920x1200"
 
+# qtile aliases
+alias config="vim ~/.config/qtile/config.py"
+
 # udisksctl aliases
 alias udmount="udisksctl mount -b"
 alias udunmount="udisksctl unmount -b"
