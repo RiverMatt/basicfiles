@@ -177,7 +177,7 @@ screens = [
                 widget.Battery(foreground="bbbb00"),
                 widget.Sep(),
                 widget.TextBox("Vol:"),
-                widget.PulseVolume(update_interval=0.2),
+                widget.PulseVolume(update_interval=0.2, limit_max_volume=True),
                 widget.Sep(),
                 widget.Clock(format="%H:%M.%S %a %D", foreground="#bbbb00"),
                 widget.Sep(),
