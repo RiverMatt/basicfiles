@@ -14,19 +14,16 @@ compinit
 
 PATH="$PATH:/$HOME/.local/bin"
 
-#RPROMPT='%(?.%F{blue}.%F{#FFFF00})%T%f'
-RPROMPT='%F{#FFFF00}%T%f'
+#PROMPT='%(?.%F{blue}.%F{#FFFF00})%T%f'
+#RPROMPT='%F{#FFFF00}%T%f'
 PROMPT='%B%(?.%F{green}.%F{red})>%f %F{cyan}%n%f%F{green}@%f%F{cyan}%m %~%f%b %F{green}%(!.#.$)%f '
 
 bindkey '^R' history-incremental-search-backward
 
-alias tshift="sudo timeshift-autosnap && sudo update-grub"
-alias scan="sudo arp-scan --localnet"
-alias zip="zip -r"
-alias klogout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
-alias tmp="cd $(mktemp -d)"
-alias battery='echo "$(cat /sys/class/power_supply/BAT0/capacity)%"'
+export VISUAL="vim"
+export EDITOR="$VISUAL"
 
+# Aliases
 # Duplicate screen to dual monitor in qtile
 alias dm="xrandr --output eDP-1 --mode 1920x1080 && xrandr --output DP-3 --mode 1920x1080 --same-as eDP-1"
 alias dmoff="xrandr --output DP-3 --off && xrandr --output eDP-1 --mode 1920x1200"
@@ -38,14 +35,16 @@ alias config="vim ~/.config/qtile/config.py"
 alias udmount="udisksctl mount -b"
 alias udunmount="udisksctl unmount -b"
 
-alias vc="protonvpn-cli c -f"
-alias vd="protonvpn-cli d"
-
 # Rust replacements: exa, bat, ripgrep (rg), fd (find), procs, broot (tree+)
 alias ls="exa --long"
 alias ls.="exa --all --long"
 alias tree="exa --tree"
 
-export VISUAL="vim"
-export EDITOR="$VISUAL"
-
+alias tshift="sudo timeshift-autosnap && sudo update-grub"
+alias scan="sudo arp-scan --localnet"
+alias zip="zip -r"
+alias klogout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
+alias tmp="cd $(mktemp -d)"
+alias battery='echo "$(cat /sys/class/power_supply/BAT0/capacity)%"'
+alias cp="cp -v"
+alias mv="mv -v"
