@@ -14,7 +14,7 @@ compinit
 
 PATH="$PATH:/$HOME/.local/bin"
 
-#PROMPT='%(?.%F{blue}.%F{#FFFF00})%T%f'
+#RPROMPT='%(?.%F{blue}.%F{#FFFF00})%T%f'
 #RPROMPT='%F{#FFFF00}%T%f'
 PROMPT='%B%(?.%F{green}.%F{red})>%f %F{cyan}%n%f%F{green}@%f%F{cyan}%m %~%f%b %F{green}%(!.#.$)%f '
 
