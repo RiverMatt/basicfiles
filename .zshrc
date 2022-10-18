@@ -26,6 +26,8 @@ export EDITOR="$VISUAL"
 # Aliases
 # Duplicate screen to dual monitor in qtile
 alias dm="xrandr --output eDP-1 --mode 1920x1080 && xrandr --output DP-3 --mode 1920x1080 --same-as eDP-1"
+alias dmleft="xrandr --output DP-3 --mode 1920x1080 --left-of eDP-1"
+alias dmright="xrandr --output DP-3 --mode 1920x1080 --right-of eDP-1"
 alias dmoff="xrandr --output DP-3 --off && xrandr --output eDP-1 --mode 1920x1200"
 
 # qtile aliases
@@ -39,6 +41,7 @@ alias udunmount="udisksctl unmount -b"
 alias ls="exa --long"
 alias ls.="exa --all --long"
 alias tree="exa --tree"
+alias bat="bat -P"
 
 alias tshift="sudo timeshift-autosnap && sudo update-grub"
 alias scan="sudo arp-scan --localnet"
