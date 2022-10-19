@@ -72,7 +72,7 @@ set nolist " Show tab characters or not. :set list! will toggle tab characters o
 set lcs=tab:»_,trail:·
 set showcmd
 " proper inverse highlighting
-highlight Visual cterm=reverse ctermbg=NONE 
+"highlight Visual cterm=reverse ctermbg=NONE 
 
 " Custom keybinds
 nnoremap <CR> i<CR><Esc>

@@ -43,6 +43,7 @@ def autostart():
 # change backend on picom to glx
 # End for autostart
 
+
 mod = "mod4"            # mod1 == alt
 terminal = "alacritty"
 
@@ -112,7 +113,10 @@ keys = [
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause"), desc="Play/Pause player"),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next"), desc="Next track"),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous"), desc="Previous track"),
-    
+
+    # Switch between screens
+    Key([mod], "q", lazy.next_screen(), desc=""),
+
     # Custom application key binds
     Key([mod], "c", lazy.spawn("chromium"), desc="Launch Chromium browser"),
     Key([mod, "shift"], "c", lazy.spawn("chromium --incognito"), desc="Launch incognito Chromium"),
@@ -125,6 +129,8 @@ keys = [
 ]
 
 groups = [Group(i) for i in "123456789"]
+
+#groups[1].layout = "monadwide"
 
 for i in groups:
     keys.extend(
@@ -150,9 +156,10 @@ for i in groups:
         ]
     )
 
+
 layouts = [
-    layout.MonadTall(ratio=0.6, border_focus="#aaaa00", border_width=2, margin=7, insert_position=1),
     layout.MonadWide(ratio=0.7, border_focus="#aaaa00", border_width=2, margin=7, insert_position=1),
+    layout.MonadTall(ratio=0.6, border_focus="#aaaa00", border_width=2, margin=7, insert_position=1),
     #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=2,
     layout.Columns(border_focus="#aaaa00", border_width=2, margin=7, insert_position=1),
     layout.Max(),
@@ -204,9 +211,14 @@ screens = [
                 widget.QuickExit(foreground="#aa11aa"),
             ],
             24,
+            margin=3,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
+    ),
+    Screen(
+        wallpaper="~/Pictures/wallpaper/KDE-Plasma-Dark-822-HD-WL.jpg",
+        wallpaper_mode="fill",
     ),
 ]
 
