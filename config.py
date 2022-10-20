@@ -33,6 +33,8 @@ from libqtile.utils import guess_terminal
 import os
 import subprocess
 
+import random
+
 from libqtile import hook
 
 @hook.subscribe.startup_once
@@ -181,9 +183,21 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+# Random wallpaper from ~/Pictures/wallpaper
+home_dir = os.path.expanduser('~')
+wallpapers = os.listdir(f"{home_dir}/Pictures/wallpaper/")
+for file in wallpapers:
+    if file[-4:] == '.jpg' or file[-4:] == '.png' or file[-5:] == '.jpeg':
+        continue
+    else:
+        wallpapers.remove(file)
+random_wallpaper = random.choice(wallpapers)
+wallpapers.remove(random_wallpaper)
+random_wallpaper_2 = random.choice(wallpapers)
+
 screens = [
     Screen(
-        wallpaper="~/Pictures/wallpaper/KDE-Plasma-Dark-822-HD-WL.jpg",
+        wallpaper=f"~/Pictures/wallpaper/{random_wallpaper}",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -217,7 +231,7 @@ screens = [
         ),
     ),
     Screen(
-        wallpaper="~/Pictures/wallpaper/KDE-Plasma-Dark-822-HD-WL.jpg",
+        wallpaper=f"~/Pictures/wallpaper/{random_wallpaper_2}",
         wallpaper_mode="fill",
     ),
 ]
