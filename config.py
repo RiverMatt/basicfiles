@@ -134,6 +134,7 @@ keys = [
 groups = [Group(i) for i in "123456789"]
 
 #groups[1].layout = "monadwide"
+groups[8].layout = "matrix"
 
 for i in groups:
     keys.extend(
@@ -169,7 +170,7 @@ layouts = [
     # Try more layouts by unleashing below layouts.
     #layout.Stack(num_stacks=2),
     #layout.Bsp(),
-    #layout.Matrix(),
+    layout.Matrix(border_focus="#aaaa00", border_width=2, margin=7, insert_position=1),
     #layout.RatioTile(),
     #layout.Tile(),
     #layout.TreeTab(),
