@@ -25,10 +25,10 @@ export EDITOR="$VISUAL"
 
 # Aliases
 # Duplicate screen to dual monitor in qtile
-alias dm="xrandr --output eDP-1 --mode 1920x1080 && xrandr --output DP-3 --mode 1920x1080 --same-as eDP-1"
-alias dmleft="xrandr --output DP-3 --mode 1920x1080 --left-of eDP-1"
-alias dmright="xrandr --output DP-3 --mode 1920x1080 --right-of eDP-1"
-alias dmoff="xrandr --output DP-3 --off && xrandr --output eDP-1 --mode 1920x1200"
+alias dm="killall picom; xrandr --output eDP-1 --mode 1920x1080 && xrandr --output DP-3 --mode 1920x1080 --same-as eDP-1"
+alias dml="xrandr --output DP-3 --mode 1920x1080 --left-of eDP-1"
+alias dmr="xrandr --output DP-3 --mode 1920x1080 --right-of eDP-1"
+alias dmoff="picom -b; xrandr --output DP-3 --off && xrandr --output eDP-1 --mode 1920x1200"
 
 # qtile aliases
 alias config="vim ~/.config/qtile/config.py"
@@ -51,3 +51,5 @@ alias tmp="cd $(mktemp -d)"
 alias battery='echo "$(cat /sys/class/power_supply/BAT0/capacity)%"'
 alias cp="cp -v"
 alias mv="mv -v"
+
+alias jclip4="bluetoothctl connect 28:FA:19:5E:6B:9C"
