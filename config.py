@@ -104,7 +104,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "d", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
-    Key(["control", "mod1"], "space", lazy.spawn("slock"), desc="Locks the screen"),
+    Key([mod, "control"], "space", lazy.spawn("slock"), desc="Locks the screen"),
     
     # Function key binds
     Key([], "XF86Search", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
@@ -123,7 +123,7 @@ keys = [
     # Custom application key binds
     Key([mod], "c", lazy.spawn("chromium"), desc="Launch Chromium browser"),
     Key([mod, "shift"], "c", lazy.spawn("chromium --incognito"), desc="Launch incognito Chromium"),
-    Key(["control", "mod1"], "p", lazy.spawn("flameshot gui"), desc="Takes a screenshot"),
+    Key([mod], "p", lazy.spawn("flameshot gui"), desc="Takes a screenshot"),
     Key([mod], "f", lazy.spawn("librewolf"), desc="Launch LibreWolf"),
     Key([mod, "shift"], "f", lazy.spawn("librewolf --private-window"), desc="Launch LibreWolf private"),
     Key([mod], "b", lazy.spawn("brave"), desc="Launch Brave browser"),
