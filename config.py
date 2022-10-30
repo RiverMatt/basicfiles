@@ -102,9 +102,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "d", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
-    Key([mod, "control"], "space", lazy.spawn("slock"), desc="Locks the screen"),
+    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     
     # Function key binds
     Key([], "XF86Search", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
@@ -123,6 +121,8 @@ keys = [
     Key([mod], "q", lazy.screen.toggle_group()),
 
     # Custom application key binds
+    Key([mod], "r", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
+    Key([mod, "control"], "space", lazy.spawn("slock"), desc="Locks the screen"),
     Key([mod], "c", lazy.spawn("chromium"), desc="Launch Chromium browser"),
     Key([mod, "shift"], "c", lazy.spawn("chromium --incognito"), desc="Launch incognito Chromium"),
     Key([mod], "p", lazy.spawn("flameshot gui"), desc="Takes a screenshot"),
@@ -131,6 +131,7 @@ keys = [
     Key([mod], "b", lazy.spawn("brave"), desc="Launch Brave browser"),
     Key([mod, "shift"], "b", lazy.spawn("brave --incognito"), desc="Launch incognito Brave browser"),
     Key([mod], "a", lazy.spawn("alacritty -e ranger"), desc="Launch ranger"),
+    Key([mod], "d", lazy.spawn("dolphin"), desc="Spawn Dolphin"),
 ]
 
 groups = [Group(i) for i in "123456789"]

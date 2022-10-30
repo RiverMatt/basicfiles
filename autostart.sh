@@ -1,4 +1,5 @@
 #!/bin/sh
 
-picom -b &
+sleep 1
+picom -b
 playerctld daemon
