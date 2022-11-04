@@ -212,7 +212,9 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(),
-                widget.GroupBox(),
+                widget.GroupBox(visible_groups=[
+                    '1','2','3','4','5','6','7','8','9'
+                    ]),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
