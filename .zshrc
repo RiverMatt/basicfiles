@@ -32,6 +32,7 @@ alias dmoff="picom -b; xrandr --output DP-3 --off && xrandr --output eDP-1 --mod
 
 # qtile aliases
 alias config="vim ~/.config/qtile/config.py"
+alias logger="less ~/.local/share/qtile/qtile.log"
 
 # udisksctl aliases
 alias udmount="udisksctl mount -b"
@@ -53,3 +54,4 @@ alias cp="cp -v"
 alias mv="mv -v"
 
 alias jclip4="bluetoothctl connect 28:FA:19:5E:6B:9C"
+alias vpnut="nmcli c up US-UT36_node-us-112.protonvpn.net.udp"

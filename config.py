@@ -24,10 +24,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from libqtile.log_utils import logger
 
 # For autostart
 import os
@@ -113,9 +114,12 @@ keys = [
     Key([], "XF86Search", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 5%-"), desc="Brightness down 5%"),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 5%+"), desc="Brightness up 5%"),
-    Key([], "XF86AudioLowerVolume", lazy.widget["pulsevolume"].decrease_vol(), desc="Lower volume"),
-    Key([], "XF86AudioRaiseVolume", lazy.widget["pulsevolume"].increase_vol(), desc="Raise volume"),
-    Key([], "XF86AudioMute", lazy.widget["pulsevolume"].mute(), desc="Mute audio"),
+    #Key([], "XF86AudioLowerVolume", lazy.widget["pulsevolume"].decrease_vol(), desc="Lower volume"),
+    #Key([], "XF86AudioRaiseVolume", lazy.widget["pulsevolume"].increase_vol(), desc="Raise volume"),
+    #Key([], "XF86AudioMute", lazy.widget["pulsevolume"].mute(), desc="Mute audio"),
+    Key([], "XF86AudioMute", lazy.spawn("pamixer --set-volume 0"), desc="Mute audio"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn('pamixer --increase 5'), desc="Raise volume"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn('pamixer --decrease 5'), desc="Lower volume"),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause"), desc="Play/Pause player"),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next"), desc="Next track"),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous"), desc="Previous track"),
@@ -126,8 +130,8 @@ keys = [
     Key([mod], "q", lazy.screen.toggle_group()),
 
     # Custom application key binds
-    Key([mod], "r", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
     Key([mod, "control"], "space", lazy.spawn("slock"), desc="Locks the screen"),
+    Key([mod], "r", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
     Key([mod], "c", lazy.spawn("chromium"), desc="Launch Chromium browser"),
     Key([mod, "shift"], "c", lazy.spawn("chromium --incognito"), desc="Launch incognito Chromium"),
     Key([mod], "p", lazy.spawn("flameshot gui"), desc="Takes a screenshot"),
@@ -144,6 +148,16 @@ groups = [Group(i) for i in "123456789"]
 #groups[1].layout = "monadwide"
 groups[8].layout = "matrix"
 
+# add a group exclusively for second monitor
+groups.append(Group("m"))
+
+# set the second monitor to start at group m
+@hook.subscribe.screens_reconfigured
+def send_to_second_screen():
+    if len(qtile.screens) > 1:
+        qtile.groups_map["m"].cmd_toscreen(1, toggle=False)
+
+
 for i in groups:
     keys.extend(
         [
@@ -155,16 +169,17 @@ for i in groups:
                 desc="Switch to group {}".format(i.name),
             ),
             # mod1 + shift + letter of group = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
-            ),
+            #Key(
+                #[mod, "shift"],
+                #i.name,
+                #lazy.window.togroup(i.name, switch_group=True),
+                #desc="Switch to & move focused window to group {}".format(i.name),
+            #),
             # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
+            # mod1 + shift + letter of group = move focused window to group
+            Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+                desc="move focused window to group {}".format(i.name)
+            ),
         ]
     )
 
@@ -227,14 +242,12 @@ screens = [
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
                 widget.Sep(),
-                widget.Battery(foreground="bbbb00", update_interval=30),
+                widget.Battery(foreground="bbbb00", update_interval=10),
                 widget.Sep(),
                 widget.TextBox("Vol:"),
-                widget.PulseVolume(update_interval=0.2, limit_max_volume=True),
+                widget.PulseVolume(update_interval=0.1, limit_max_volume=True),
                 widget.Sep(),
-                widget.Clock(format="%H:%M.%S %a %D", foreground="#bbbb00"),
-                widget.Sep(),
-                widget.QuickExit(foreground="#aa11aa"),
+                widget.Clock(format="%H:%M.%S %a %D ", foreground="#bbbb00"),
             ],
             24,
             margin=3,
