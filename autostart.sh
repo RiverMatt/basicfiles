@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sleep 1
-picom
+picom -b
 playerctld daemon
+nm-applet &
