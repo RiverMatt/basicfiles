@@ -140,10 +140,11 @@ keys = [
 groups = [Group(i) for i in "123456789"]
 
 #groups[1].layout = "monadwide"
-groups[8].layout = "matrix"
+groups[8].layout = "columns"
 
 # add a group exclusively for second monitor
 groups.append(Group("m"))
+groups[9].layout = "max"
 
 # set the second monitor to start at group m
 @hook.subscribe.screens_reconfigured
