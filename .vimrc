@@ -73,6 +73,8 @@ set lcs=tab:»_,trail:·
 set showcmd
 
 " Custom keybinds
+nnoremap <F4> :w<CR>:!chmod +x %<CR>
+nnoremap <F5> :!./%<CR>
 nnoremap <CR> i<CR><Esc>
 nnoremap <Tab> i<Tab><Esc>l
 nnoremap <BS> hx<Esc>
@@ -93,8 +95,8 @@ nnoremap ,,s mcO################################################################
 
 
 " Navigating splits
-nnoremap <F5> :vs .<CR>
-nnoremap <F4> :split .<CR>
+nnoremap <F3> :vs .<CR>
+nnoremap <F2> :split .<CR>
 set splitbelow
 set splitright
 "map <S-J> :tabp<CR>
@@ -125,7 +127,7 @@ au BufNewFile,BufRead *.py
 	\ | setlocal list
 	\ | setlocal lcs=lead:·
 	\ | setlocal colorcolumn=79
-	\ | nnoremap <F2> :!python %<CR>
+	\ | nnoremap <F5> :!python %<CR>
 	"\ | nnoremap <F2> :w<CR>:!python %<CR>
 
 " ---- end Python ----
