@@ -1,0 +1,11 @@
+[Unit]
+Description=Disconnects from the ipv6 leak protection on sleep
+Requires=sleep.target
+After=sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=nmcli connection down pvpn-ipv6leak-protection
+
+[Install]
+WantedBy=sleep.target
