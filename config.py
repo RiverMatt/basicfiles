@@ -46,6 +46,7 @@ def autostart():
 # change backend on picom to glx
 # End for autostart
 
+home_dir = os.path.expanduser('~')
 
 mod = "mod4"            # mod1 == alt
 terminal = "alacritty"
@@ -110,12 +111,12 @@ keys = [
     Key([], "XF86Search", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 5%-"), desc="Brightness down 5%"),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s 5%+"), desc="Brightness up 5%"),
-    Key([], "XF86AudioLowerVolume", lazy.widget["pulsevolume"].decrease_vol(), desc="Lower volume"),
-    Key([], "XF86AudioRaiseVolume", lazy.widget["pulsevolume"].increase_vol(), desc="Raise volume"),
-    Key([], "XF86AudioMute", lazy.widget["pulsevolume"].mute(), desc="Mute audio"),
-    #Key([], "XF86AudioMute", lazy.spawn("pamixer --set-volume 0"), desc="Mute audio"),
-    #Key([], "XF86AudioRaiseVolume", lazy.spawn('pamixer --increase 5'), desc="Raise volume"),
-    #Key([], "XF86AudioLowerVolume", lazy.spawn('pamixer --decrease 5'), desc="Lower volume"),
+    #Key([], "XF86AudioLowerVolume", lazy.widget["pulsevolume"].decrease_vol(), desc="Lower volume"),
+    #Key([], "XF86AudioRaiseVolume", lazy.widget["pulsevolume"].increase_vol(), desc="Raise volume"),
+    #Key([], "XF86AudioMute", lazy.widget["pulsevolume"].mute(), desc="Mute audio"),
+    Key([], "XF86AudioMute", lazy.spawn("pamixer -t"), desc="Mute audio"),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn('pamixer --increase 5'), desc="Raise volume"),
+    Key([], "XF86AudioLowerVolume", lazy.spawn('pamixer --decrease 5'), desc="Lower volume"),
     Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause"), desc="Play/Pause player"),
     Key([], "XF86AudioNext", lazy.spawn("playerctl next"), desc="Next track"),
     Key([], "XF86AudioPrev", lazy.spawn("playerctl previous"), desc="Previous track"),
@@ -126,6 +127,7 @@ keys = [
     Key([mod], "q", lazy.screen.toggle_group()),
 
     # Custom application key binds
+    Key([mod, "control", "shift"], "m", lazy.spawn(f'{home_dir}/Documents/python/map_it.py'), desc="Launches map_it.py"),
     Key([mod, "control"], "space", lazy.spawn("slock"), desc="Locks the screen"),
     Key([mod], "r", lazy.spawn("dmenu_run"), desc="Spawn dmenu_run"),
     Key([mod], "c", lazy.spawn("chromium"), desc="Launch Chromium browser"),
@@ -180,8 +182,18 @@ for i in groups:
 
 
 layouts = [
-    layout.MonadWide(ratio=0.7, border_focus="#aaaa00", border_width=2, margin=7),
-    layout.MonadTall(ratio=0.6, border_focus="#aaaa00", border_width=2, margin=7),
+    layout.MonadWide(ratio=0.7,
+                     border_focus="#aaaa00",
+                     border_width=2,
+                     margin=7,
+                     new_client_position='before_current',
+    ),
+    layout.MonadTall(ratio=0.6,
+                     border_focus="#aaaa00",
+                     border_width=2,
+                     margin=7,
+                     new_client_position='before_current',
+    ),
     #layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=2,
     layout.Columns(border_focus="#aaaa00", border_width=2, margin=7, insert_position=1),
     layout.Max(),
@@ -204,7 +216,6 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 # Random wallpaper from ~/Pictures/wallpaper
-home_dir = os.path.expanduser('~')
 wallpapers = os.listdir(f"{home_dir}/Pictures/wallpaper/")
 for file in wallpapers:
     if file[-4:] == '.jpg' or file[-4:] == '.png' or file[-5:] == '.jpeg':
@@ -239,8 +250,8 @@ screens = [
                 widget.Sep(),
                 widget.Battery(foreground="bbbb00", update_interval=10),
                 widget.Sep(),
-                widget.TextBox("Vol:"),
-                widget.PulseVolume(update_interval=0.1, limit_max_volume=True),
+                #widget.Volume(fmt='Vol: {}'),
+                widget.PulseVolume(fmt='Vol: {}', update_interval=0.1, limit_max_volume=True),
                 widget.Sep(),
                 widget.Clock(format="%H:%M.%S %a %D ", foreground="#bbbb00"),
             ],
