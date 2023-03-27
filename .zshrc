@@ -23,6 +23,15 @@ bindkey '^R' history-incremental-search-backward
 export VISUAL="vim"
 export EDITOR="$VISUAL"
 
+# Custom Functions
+
+# upload a file to paste.rs, or upload from stdin if no file name
+# was included. Usage: paste <filename> or paste -> enter text -> ctrl+d
+function paste() {
+    local file=${1:-/dev/stdin}
+    curl --data-binary @${file} https://paste.rs
+}
+
 # Aliases
 # Duplicate screen to dual monitor in qtile
 alias dm="killall picom; xrandr --output eDP-1 --mode 1920x1080 && xrandr --output DP-3 --mode 1920x1080 --same-as eDP-1"
@@ -49,9 +58,18 @@ alias scan="sudo arp-scan --localnet"
 alias zip="zip -r"
 alias klogout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
 alias tmp="cd $(mktemp -d)"
-alias battery='echo "$(cat /sys/class/power_supply/BAT0/capacity)%"'
+#alias battery='echo "$(cat /sys/class/power_supply/BAT0/capacity)%"'
+alias battery='upower --show-info /org/freedesktop/UPower/devices/battery_BAT0'
 alias cp="cp -v"
 alias mv="mv -v"
 
 alias jclip4="bluetoothctl connect 28:FA:19:5E:6B:9C"
-alias vpnut="nmcli c up US-UT36_node-us-112.protonvpn.net.udp"
+alias break10="termdown 10m -f doh" # other good fonts: gothic, poison, speed, starwars, doom
+alias break5="termdown 5m -f doh"
+alias vpnc="protonvpn-cli connect --fastest"
+alias bottom="btm"
+alias feh="feh --scale-down"
+alias login_chime="mpv /usr/share/sounds/Oxygen-Sys-Log-In.ogg"
+alias cd="pushd"
+alias dc="popd"
+alias back="popd"
