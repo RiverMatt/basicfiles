@@ -27,7 +27,7 @@ export EDITOR="$VISUAL"
 
 # upload a file to paste.rs, or upload from stdin if no file name
 # was included. Usage: paste <filename> or paste -> enter text -> ctrl+d
-function paste() {
+function pasters() {
     local file=${1:-/dev/stdin}
     curl --data-binary @${file} https://paste.rs
 }
