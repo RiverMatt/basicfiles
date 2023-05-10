@@ -41,7 +41,7 @@ alias dmoff="picom -b; xrandr --output DP-3 --off && xrandr --output eDP-1 --mod
 
 # qtile aliases
 alias config="vim ~/.config/qtile/config.py"
-alias logger="less ~/.local/share/qtile/qtile.log"
+alias logger="tail -f ~/.local/share/qtile/qtile.log"
 
 # udisksctl aliases
 alias udmount="udisksctl mount -b"
@@ -70,3 +70,6 @@ alias vpnc="protonvpn-cli connect --fastest"
 alias bottom="btm"
 alias feh="feh --scale-down"
 alias login_chime="mpv /usr/share/sounds/Oxygen-Sys-Log-In.ogg"
+alias audio="pavucontrol"
+#alias pip-upgrade="python -m pip install --upgrade $(python -m pip list --outdated | awk '{if (NR>2) print $1}')"
+alias venvidle="python -m idlelib.idle"

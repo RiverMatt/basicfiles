@@ -56,7 +56,7 @@ filetype plugin on
 "set t_Co=256		" set 8 colors
 "set t_Sb=[4%dm	" set background color
 "set t_Sf=[3%dm	" set foreground oolor
-colo slate 		" or default (earthy tones), elflord (browns, blues, pinks), evening (like default but with yellow), industry 
+colo industry 		" or default (earthy tones), elflord (browns, blues, pinks), evening (like default but with yellow), industry 
 
 
 " Don't wake up system with blinking cursor:
@@ -71,6 +71,8 @@ set smartcase
 set nolist " Show tab characters or not. :set list! will toggle tab characters on and off
 set lcs=tab:»_,trail:·
 set showcmd
+" proper inverse highlighting
+"highlight Visual cterm=reverse ctermbg=NONE 
 
 " Custom keybinds
 nnoremap <F4> :w<CR>:!chmod +x %<CR>
@@ -108,6 +110,7 @@ map <C-l> <C-W>l
 
 set shiftwidth=2
 
+setlocal tabstop=4
 
 " Folds
 set foldmethod=indent
@@ -128,7 +131,7 @@ au BufNewFile,BufRead *.py
 	\ | setlocal lcs=lead:·
 	\ | setlocal colorcolumn=79
 	\ | nnoremap <F5> :!python %<CR>
-	"\ | nnoremap <F2> :w<CR>:!python %<CR>
+	"\ | nnoremap <F5> :w<CR>:!python %<CR>
 
 " ---- end Python ----
 
