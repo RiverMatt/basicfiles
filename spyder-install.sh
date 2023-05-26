@@ -7,5 +7,5 @@ python -m venv $VENV_DIR --upgrade-deps
 source $VENV_DIR/bin/activate
 python -m pip install spyder numpy scipy pandas matplotlib sympy cython
 
-mkdir -p ~/.config/spyder-py3/config
+mkdir -p -v ~/.config/spyder-py3/config
 cp ~/basicfiles/spyder.ini ~/.config/spyder-py3/config/
