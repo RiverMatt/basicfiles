@@ -1,0 +1,10 @@
+[Unit]
+Description=ydotool autostart service
+After=multi-user.target
+
+[Service]
+ExecStart=ydotoold
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
