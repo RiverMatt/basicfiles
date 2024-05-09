@@ -16,7 +16,8 @@ PATH="$PATH:/$HOME/.local/bin"
 
 #RPROMPT='%(?.%F{blue}.%F{#FFFF00})%T%f'
 #RPROMPT='%F{#FFFF00}%T%f'
-PROMPT='%B%(?.%F{green}.%F{red})>%f %F{cyan}%n%f%F{green}@%f%F{cyan}%m %~%f%b %F{green}%(!.#.$)%f '
+#PROMPT='%B%(?.%F{green}.%F{red})>%f %F{cyan}%n%f%F{green}@%f%F{cyan}%m %~%f%b %F{green}%(!.#.$)%f '
+PROMPT='%B%(?.%F{green}.%F{red})>%f %F{yellow}%(!.%n.%F{cyan}%n)%f%F{green}@%f%F{yellow}%(!.%m %~.%F{cyan}%m %~)%f%b %(!.%F{yellow}#.%F{green}$)%f '
 
 bindkey '^R' history-incremental-search-backward
 
@@ -33,9 +34,9 @@ function pasters() {
 }
 
 # run tmux at terminal start if tmux isn't already running
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    exec tmux
-fi
+#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#    exec tmux
+#fi
 
 # Aliases
 # Duplicate screen to dual monitor in qtile
