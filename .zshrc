@@ -59,6 +59,15 @@ alias ls.="exa --all --long"
 alias tree="exa --tree"
 alias bat="bat -P"
 
+# Misc Aliases
+alias jclip4="bluetoothctl connect 28:FA:19:5E:6B:9C"
+alias break10="termdown 10m -f doh" # other good fonts: gothic, poison, speed, starwars, doom
+alias break5="termdown 5m -f doh"
+alias vpnc="protonvpn-cli connect --fastest"
+alias bottom="btm"
+alias feh="feh --scale-down"
+alias login_chime="mpv /usr/share/sounds/Oxygen-Sys-Log-In.ogg"
+alias audio="pavucontrol"
 alias tshift="sudo timeshift-autosnap && sudo update-grub"
 alias scan="sudo arp-scan --localnet"
 alias zip="zip -r"
@@ -69,13 +78,10 @@ alias battery='upower --show-info /org/freedesktop/UPower/devices/battery_BAT0'
 alias cp="cp -v"
 alias mv="mv -v"
 
-alias jclip4="bluetoothctl connect 28:FA:19:5E:6B:9C"
-alias break10="termdown 10m -f doh" # other good fonts: gothic, poison, speed, starwars, doom
-alias break5="termdown 5m -f doh"
-alias vpnc="protonvpn-cli connect --fastest"
-alias bottom="btm"
-alias feh="feh --scale-down"
-alias login_chime="mpv /usr/share/sounds/Oxygen-Sys-Log-In.ogg"
-alias audio="pavucontrol"
+# Python Aliases
 #alias pip-upgrade="python -m pip install --upgrade $(python -m pip list --outdated | awk '{if (NR>2) print $1}')"
 alias venvidle="python -m idlelib.idle"
+
+# Spyder aliases
+alias spyderc="~/spyder-venv/bin/spyder --conf-dir ~/spyder-venv/etc/spyder/config/"
+alias spyder="~/spyder-venv/bin/spyder"
