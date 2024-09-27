@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ["$#" -ne 2]; then
+if [ "$#" -ne 2 ]; then
 	echo "Usage: $0 <duration in seconds> <output filename>.wav. Exiting..."
 	exit 1
 fi
